@@ -9,7 +9,7 @@ function slackGameImage() {
     // Selects the div with id "guess-the-image"
     var guessImage = document.getElementById("guess-the-image");
     // Create an attribute for the image element
-    createImage.setAttribute("src","assets/images/slack-logo.svg");
+    createImage.setAttribute("src","../images/slack-logo.svg");
     createImage.setAttribute("width", "300px");
     // Adds the image into the div
     guessImage.appendChild(createImage);
