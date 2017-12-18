@@ -9,7 +9,7 @@ function slackGameImage() {
     // Selects the div with id "guess-the-image"
     var guessImage = document.getElementById("guess-the-image");
     // Create an attribute for the image element
-    createImage.setAttribute("src","assets/images/slack-logo.SVG");
+    createImage.setAttribute("src","assets/images/slack-logo.svg");
     createImage.setAttribute("width", "300px");
     // Adds the image into the div
     guessImage.appendChild(createImage);
@@ -85,7 +85,7 @@ function slackGameImage() {
 function twitterGameImage() {
     var guessImage = document.getElementById("guess-the-image");
 
-    createImage.setAttribute("src","assets/images/twitter-logo.JPG");
+    createImage.setAttribute("src","assets/images/twitter-logo.jpg");
     createImage.setAttribute("width", "300px");
     guessImage.appendChild(createImage);
 
@@ -158,7 +158,7 @@ function twitterGameImage() {
 function githubGameImage() {
     var guessImage = document.getElementById("guess-the-image");
 
-    createImage.setAttribute("src","assets/images/github-logo.PNG");
+    createImage.setAttribute("src","assets/images/github-logo.png");
     createImage.setAttribute("width", "300px");
 
     resetGame();
