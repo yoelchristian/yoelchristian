@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hangman Game</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+</head>
+
+<body>
+  <!-- Bootstrap Grid -->
+<div class="container">
+
+    <!-- Hangman Title with Jumbotron -->
+    <div class="jumbotron">
+      <h1 class="text-center"><strong>Hangman Game</strong></h1>
+      <h4 class="text-center">by Yoel Christian</h4>
+    </div>
+
+    <div class="row">
+
+      <!-- Left Panel -->
+        <div class="col-lg-6">
+        
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">Guess this company's logo</h3>
+                </div>
+
+                <div class="panel-body">
+                    <div class="text-center">
+                        <div id="guess-the-image"></div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+      <!-- Right Panel -->
+        <div class="col-lg-6">
+                
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center">Instructions</h3>
+                </div>
+               
+                <div class="panel-body text-center">
+                    <button onclick="startGame()">Start Game!</button>
+                    <br><br><br>
+                    
+                    <div>Wins:</div>
+                    <div id="number-of-wins"></div>
+                    <br><br><br>
+
+                    <div>Current Word:</div>
+                    <div>
+                        <span id="letter1"></span><span id="letter2"></span><span id="letter3"></span>
+                        <span id="letter4"></span><span id="letter5"></span><span id="letter3"></span>
+                        <span id="letter6"></span><span id="letter7"></span><span id="letter8"></span>
+                    </div>
+                    <br><br><br>
+
+                    <div>Number of Guesses Remaining:</div>
+                    <div id="number-of-guesses"></div>
+                    <br><br><br>
+
+                    <div>Letters Already Guessed:</div>
+                    <div id="letters-already-guessed"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
