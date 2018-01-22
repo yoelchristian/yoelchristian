@@ -1,0 +1,42 @@
+#style-jumbotron {
+    margin-bottom: 0px;
+    height: 100vh;
+    background-color: rgb(127, 226, 112);
+}
+
+.brand-logo {
+    height: 60%;
+    width: auto;
+    margin-top: -50px;
+}
+
+.navbar {
+    background-color: rgb(47, 170, 109);
+}
+
+body {
+    background-color: rgb(212, 241, 235);
+}
+
+.nav-link, .nav-item, .nav-pills {
+    color: black;
+    width: 100px;
+}
+
+.nav-pills > li > a.active {
+    background-color: rgb(39, 150, 94)!important;
+    color: black;
+    width: 100px;
+}
+
+.initial-button {
+    width: 100px;
+}
+
+.btn, .form-control {
+    margin: 5px;
+}
+
+.flavor-list-item, .effect-list-item {
+    min-width: 100px;
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GetHi!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <!-- Jumbotron -->
+    <div id="style-jumbotron" class="jumbotron jumbotron-fluid text-center" >
+        <img class="brand-logo" src="assets/image/weed-logo.png" alt="weed">
+        <div class="container">
+            <h1>Get Hi!</h1> 
+            <p>Your first step in getting effectively high!</p> 
+            <p>I am a ...</p>
+        </div>
+        <!-- Modal Button for Age/Experience Confirmation -->
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-success initial-button" data-toggle="modal" data-target="#age-confirmation">
+        Beginner
+        </button>
+        <!-- Button to Open the Modal -->
+        <button type="button" class="btn btn-danger initial-button" data-toggle="modal" data-target="#age-confirmation">
+        Veteran
+        </button>
+        <!-- The Modal -->
+        <div class="modal fade" id="age-confirmation">
+        <div class="modal-dialog">
+          <div class="modal-content">
+      
+            <!-- Modal Header -->
+            <div class="modal-header text-center">
+              <h4 class="modal-title">Terms and Condition</h4>
+            </div>
+      
+            <!-- Modal body -->
+            <div class="modal-body text-center">
+              I agree to the terms and conditions and I am at least 21 years old
+            </div>
+      
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button id="remove-jumbotron" type="button" class="btn btn-secondary" data-dismiss="modal">Enter Site</button>
+            </div>
+      
+          </div>
+        </div>
+        </div>
+    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-light sticky-top">
+        <div class="container">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="index.html">
+            <img src="assets/image/weed-logo.png" alt="Weed" width="30" height="30" class="d-inline-block align-top">
+            GetHi!
+        </a>
+        
+        <!-- Nav pills -->
+        <ul class="nav nav-pills red">
+            <li class="nav-item red">
+            <a class="nav-link active" data-toggle="pill" href="#beginner">Beginner</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#veteran">Veteran</a>
+            </li>
+            <!-- <li class="nav-item">
+            <a class="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
+            </li> -->
+        </ul>
+        </div>
+        </nav>
+    <!-- Content -->
+    <div class="tab-content">
+        <div class="tab-pane active container" id="beginner">
+            <div class="row">
+                <div class="col-md-6">
+                    <input class = "all-flavors btn-danger btn" type ="button" value ="All Flavors"></input>
+                    <div class = "all-flavor-buttons"></div>
+            
+                    <form>
+                        <input type = "text" class = "flavor-input form-control">
+                        <input class = "flavor-submit btn-danger btn" type = "submit" value = "Search Flavor">
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <input class = "all-effects btn-danger btn"  type ="button" value ="All Effects"></input>
+                    <div class = "all-effect-buttons"></div>
+                    <form>
+                        <input type = "text" class = "effect-input form-control">
+                        <input class = "effect-submit btn-danger btn" type = "submit" value = "Search Effect">
+                    </form>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">          
+                <form>
+                    <input type = "text" class = "strain-input form-control">
+                    <input class = "strain-submit btn-danger btn" type = "submit" value = "Search Strain">
+                </form>
+                </div> 
+            </div>
+            <div class="row">
+                <div class = "col strain-display"></div>
+                <div class="col testcontent"></div>
+            </div>
+        </div>   
+        <div class="tab-pane active container" id="veteran"></div>
+
+    </div>
+
+    <script type = "text/javascript" src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type = "text/javascript" src = "./assets/javascript/app.js"></script>
+    <script src="./assets/javascript/auth0.js"></script>
+    <script>
+        $("#remove-jumbotron").on("click", function(){
+            $("#style-jumbotron").remove();
+        })
+    </script>
+
+</body>
+
+</html>
