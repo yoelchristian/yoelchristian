@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
@@ -18,18 +19,83 @@
         <div class="container">
             <h1>Get Hi!</h1> 
             <p>Your first step in getting effectively high!</p> 
-            <p>I am a ...</p>
+            <p>
+                <button type="button" class="btn btn-success initial-button" data-toggle="modal" data-target="#login-modal">
+                    Log in
+                </button>
+            </p>
+            <p>Don't have a GetHi! account? Sign up and get the most recent news from us!</p>
         </div>
-        <!-- Modal Button for Age/Experience Confirmation -->
+        <!-- Modal Button for Age/Experience Confirmation -->        
         <!-- Button to Open the Modal -->
-        <button type="button" class="btn btn-success initial-button" data-toggle="modal" data-target="#age-confirmation">
-        Beginner
+        <button type="button" class="btn btn-warning initial-button" data-toggle="modal" data-target="#signup-modal">
+        Sign Up!
         </button>
-        <!-- Button to Open the Modal -->
-        <button type="button" class="btn btn-danger initial-button" data-toggle="modal" data-target="#age-confirmation">
-        Veteran
+        <span>or enter as a </span>
+        <button type="button" class="btn btn-dark initial-button" data-toggle="modal" data-target="#age-confirmation">
+        Guest
         </button>
-        <!-- The Modal -->
+        <!-- The Modal [Login Modal] -->
+        <div class="modal fade" id="login-modal">
+        <div class="modal-dialog">
+            <div class="modal-content text-left">
+        
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Log In</h4>
+            </div>
+        
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="userEmail">Login Email</label>
+                        <input type="email" class="form-control" id="userEmail" placeholder="sample@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="userPassword">Password</label>
+                        <input type="password" class="form-control" id="userPassword" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary login-button">
+                        Log In
+                    </button>
+                </form>
+            </div>
+        
+            </div>
+        </div>
+        </div>
+        <!-- The Modal [Singup Modal] -->
+        <div class="modal fade" id="signup-modal">
+        <div class="modal-dialog">
+            <div class="modal-content text-left">
+        
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Sign Up!</h4>
+            </div>
+        
+            <!-- Modal body -->
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="userEmail">User Email</label>
+                        <input type="email" class="form-control" id="createUserEmail" placeholder="sample@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="userPassword">Create a Password</label>
+                        <input type="password" class="form-control" id="createUserPassword" placeholder="Password">
+                    </div>
+                    <button type="submit" class="btn btn-primary login-button">
+                        Create Account
+                    </button>
+                </form>
+            </div>
+        
+            </div>
+        </div>
+        </div>
+        <!-- The Modal [Age Confirmation] -->
         <div class="modal fade" id="age-confirmation">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -57,74 +123,135 @@
     <nav class="navbar navbar-light sticky-top">
         <div class="container">
         <!-- Brand/logo -->
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="app.html">
             <img src="assets/image/weed-logo.png" alt="Weed" width="30" height="30" class="d-inline-block align-top">
             GetHi!
         </a>
-        
-        <!-- Nav pills -->
-        <ul class="nav nav-pills red">
-            <li class="nav-item red">
-            <a class="nav-link active" data-toggle="pill" href="#beginner">Beginner</a>
-            </li>
-            <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#veteran">Veteran</a>
-            </li>
-            <!-- <li class="nav-item">
-            <a class="nav-link" data-toggle="pill" href="#menu2">Menu 2</a>
-            </li> -->
-        </ul>
+        <!-- Nav Text -->
+        <span class="navbar-text text-left guest-name">Welcome, Guest!</span>
+        <!-- Strain Search Form -->
+        <form class="form-inline">
+        <div class="input-group">
+            <form>
+                <input type="text" class="strain-input form-control mr-sm-2" aria-label="Strain Search">
+                <input class="strain-submit btn-outline-dark my-2 my-sm-0 btn" type="submit" value="Search Strain">
+            </form>
         </div>
-        </nav>
-    <!-- Content -->
-    <div class="tab-content">
-        <div class="tab-pane active container" id="beginner">
-            <div class="row">
-                <div class="col-md-6">
-                    <input class = "all-flavors btn-danger btn" type ="button" value ="All Flavors"></input>
-                    <div class = "all-flavor-buttons"></div>
+        </form>
+        
+        </div>
+    </nav>
+    <!-- Nav Side Bar -->
+    <div class="sticky-container">
+        <ul class="sticky">
+            <li>
+                <p><img src="assets/image/facebook-icon.png" width="60" height="60"></p>                
+            </li>
+            <li>
+                <p><img src="assets/image/twitter-logo.png" width="60" height="60"></p>                
+            </li>
+            <li>
+                <p><img src="assets/image/github-icon.svg" width="60" height="60"></p>               
+            </li>
+        </ul>
+    </div>
+    <!-- Search Content -->
+    <div class="container for-content">
+        <div id="accordion">
+        <!-- Card 1: For picking flavor -->
+        <div class="row">
+        <div class="col-md-6">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" 
+                            aria-controls="collapseOne">
+                        <span class="color-header">Step 1: Search for a Flavor</span>
+                    </button>
+                </h5>
+            </div>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">                   
+            <form>
+                <input type="text" class="flavor-input form-control">
+                <input class="flavor-submit btn-primary btn" type="submit" value="Search Flavor">
+            </form>
+            <p>- or show all available flavors-</p>
+            <input class="all-flavors btn-primary btn" type="button" value="All Flavors"></input> 
+            <div class="all-flavor-buttons"></div>
+            </div>
+        </div>
+        </div>
+        
+        <!-- Card 2: For picking effects -->
+        <div class="col-md-6">
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" 
+                            aria-controls="collapseTwo">
+                        <span class="color-header">Step 2: Search for an Effect</span>
+                    </button>
+                </h5>
+            </div>
+        </div>
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+            <div class="card-body">
+            <form>
+                <input type="text" class="effect-input form-control">
+                <input class="effect-submit btn-primary btn" type="submit" value="Search Effect">
+            </form>
+            <p>- or show all available effects-</p>
+            <input class="all-effects btn-primary btn"  type="button" value="All Effects"></input>
+            <div class="all-effect-buttons"></div>
+            </div>
+        </div>
+        </div>
             
-                    <form>
-                        <input type = "text" class = "flavor-input form-control">
-                        <input class = "flavor-submit btn-danger btn" type = "submit" value = "Search Flavor">
-                    </form>
-                </div>
-                <div class="col-md-6">
-                    <input class = "all-effects btn-danger btn"  type ="button" value ="All Effects"></input>
-                    <div class = "all-effect-buttons"></div>
-                    <form>
-                        <input type = "text" class = "effect-input form-control">
-                        <input class = "effect-submit btn-danger btn" type = "submit" value = "Search Effect">
-                    </form>
-
-                </div>
+        </div>
+        </div>
+    </div>
+    <!-- Results Content -->
+    <div class="container for-content">
+        <div id="accordion">
+        <!-- Card 3: Search Result -->
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" 
+                            aria-controls="collapseThree">
+                        <span class="color-header">Search Results:</span>
+                    </button>
+                </h5>
             </div>
-            <div class="row">
-                <div class="col">          
-                <form>
-                    <input type = "text" class = "strain-input form-control">
-                    <input class = "strain-submit btn-danger btn" type = "submit" value = "Search Strain">
-                </form>
-                </div> 
-            </div>
-            <div class="row">
+        </div>
+        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">                   
                 <div class = "col strain-display"></div>
                 <div class="col testcontent"></div>
             </div>
-        </div>   
-        <div class="tab-pane active container" id="veteran"></div>
-
+        </div>
+        </div>        
     </div>
 
     <script type = "text/javascript" src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type = "text/javascript" src = "assets/javascript/app.js"></script>
-    <script type = "text/javascript" src= "assets/javascript/auth0.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
     <script>
-        $("#remove-jumbotron").on("click", function(){
-            $("#style-jumbotron").remove();
-        })
-    </script>
+    $("#remove-jumbotron").on("click", function(){
+        $("#style-jumbotron").addClass("hidden");
+    });
 
+    $(document).on("click", ".flavor-list-item",function(){
+        $("#collapseOne").collapse("toggle");
+    });
+
+    $(document).on("click", ".effect-list-item",function(){
+        $("#collapseTwo").collapse("toggle");
+    });
+    
+    </script>
 </body>
 
 </html>

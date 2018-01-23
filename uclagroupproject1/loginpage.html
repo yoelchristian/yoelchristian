@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>GetHi! Login / Signup</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <input id="user-name" type="email" placeholder="User Name">
+        <input id="password" type="password" placeholder="Password">
+
+        <button id="login-btn" class="btn btn-success">Log in</button>
+        <button id="signup-btn" class="btn btn-warning">Sign Up!</button>
+        <button id="logout-btn" class="btn btn-danger hide">Log Out</button>
+        <div class="container content"></div>
+    </div>
+
+    <script type = "text/javascript" src ="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script type = "text/javascript" src = "assets/javascript/app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
+
+    <script>
+        var config = {
+            apiKey: "AIzaSyChWZs4t1PL1N4rNwZDKPqBwA91FP5buEQ",
+            authDomain: "project1-auth-c69cf.firebaseapp.com",
+            databaseURL: "https://project1-auth-c69cf.firebaseio.com",
+            projectId: "project1-auth-c69cf",
+            storageBucket: "project1-auth-c69cf.appspot.com",
+            messagingSenderId: "816793565972"
+          };
+          firebase.initializeApp(config);
+
+        // var userName = $("#user-name").val();
+        // var password = $("#password").val();
+        // var btnLogin = $("#login-btn");
+        // var btnSignUp = $("#signup-btn");
+        // var btnLogOut = $("#logout-btn");
+
+        $(document).on("click", "#login-btn", function(event){
+            event.preventDefault();
+
+            var email = $("#user-name").val();
+            var pass = $("#password").val();
+            var auth = firebase.auth();
+
+            var promise = auth.signInWithEmailAndPassword(email, pass);
+            promise.catch(e => console.log(e.message));
+
+        });
+
+        $(document).on("click", "#signup-btn", function(event){
+            event.preventDefault();
+
+            var email = $("#user-name").val();
+            var pass = $("#password").val();
+            var auth = firebase.auth();
+
+            var promise = auth.createUserWithEmailAndPassword(email, pass);
+            promise.catch(e => console.log(e.message));
+
+        });
+
+        $(document).on("click", "#logout-btn", function(event){
+            firebase.auth().signOut();
+        });
+
+        firebase.auth().onAuthStateChanged(firebaseUser => {
+            if(firebaseUser) {
+                console.log(firebaseUser);
+
+                console.log(firebaseUser.email);
+                $(".content").text("Welcome " + firebaseUser.email);
+
+            } else {
+                console.log("not logged in");
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,11 +1,12 @@
 $(document).ready(function () {
     console.log("ayo jquery");
+    $(".testcontent").text("asd");
     var userProfile;
     var content = $('.content');
     var loadingSpinner = $('#loading');
     content.css('display', 'block');
     loadingSpinner.css('display', 'none');
-  
+
     var webAuth = new auth0.WebAuth({
       domain: "uclaproject1.auth0.com",
       clientID: "4Bjujz5-ymqWthTpaIHyNOkMd668-mvD",
@@ -117,7 +118,7 @@ $(document).ready(function () {
       $(".testcontent").text("asd");
       console.log(userProfile.nickname);
     }
-    $(".testcontent").text("asd");
+    
 
     getProfile();
     function handleAuthentication() {
